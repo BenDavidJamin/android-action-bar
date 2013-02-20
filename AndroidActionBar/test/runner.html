@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>  
+<html>  
+  <head>  
+    <title>Android Action Bar Tests</title>
+    <!-- using bower to install vendor js files into ../../vendor/* -->
+    <link rel="stylesheet" href="../../vendor/qunit/qunit.css" type="text/css" media="screen">  
+    <link rel="stylesheet" href="../css/android-action-bar-style.css" type="text/css" media="screen">
+    
+    <script type="text/javascript" src="../../vendor/qunit/qunit.js"></script>
+    <script type="text/javascript" src="../../vendor/requirejs/require.js"></script>
+  </head>
+  <body>
+    <h1 id="qunit-header">Tests</h1>
+    <h2 id="qunit-banner"></h2>
+    <div id="qunit-testrunner-toolbar"></div>
+    <h2 id="qunit-userAgent"></h2>
+    <ol id="qunit-tests"></ol>
+    <div id="qunit-fixture">test markup, will be hidden</div>
+    <div id="main"></div>
+    <script type="text/javascript">
+      QUnit.config.autostart = false;
+
+      //Setup the paths for require js. So when we need them in our tests.
+      require.config({
+        paths: {
+          'jquery': '../../vendor/jquery/jquery',
+          'underscore': '../../vendor/underscore-amd/underscore',
+          'backbone': '../../vendor/backbone-amd/backbone'
+        }
+      });
+ 
+      require(['core.tests.js'], function(){
+          QUnit.start(); //Tests loaded, run tests
+      });
+    </script>
+  </body>  
+</html>
